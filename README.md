@@ -1,15 +1,21 @@
-# Effect-Box-Docs
+# Effect-Box
 
 ## Introduction
-The Effect Box IV: Gruppe B Edition is a sound effect device that takes a sound input signal, modifies it by applying effects and passes it to sound output.
-The sound input and sound ouput signals is provided by two 3.5 mm jacks.
-The effects are created using an Xilinx Artix 7 FPGA and programmed using the modern hardware design language Chisel. 
-To control the application of the effects and the settings of each effect, an EFM32GG MCU is used.
-Each effect with their respective settings is displayed on the SPI display, and can be configured using the buttons below the display.
+Effect-Box is an audio effect device that takes an audio input, modifies it by applying effects and plays the modified audio on a DAC.
+The audio input and output is provided by two 3.5 mm jacks.
+The audio effects are implemented in Chisel and run on a Xilinx Artix 7 FPGA.
+To select the desired audio effects and configure these the PCB is equipped with an LCD screen and buttons.
+These are connected to an EFM32GG MCU which in turn sends control signals to the FPGA to enable and configure the effects as the user specifies in the interface.
+
+## Effects
+TODO write about chaining
+
+TODO briefly describe the audio properties (not implementation) of each effect
 
 ## LCD menu
-The LCD menu displays the available effects applicable to the input sound signal. Every effect has one or more settings that can be configured. The settings will be different for each effect, but every effect has a "bypass" setting. This setting enables/disables the chosen effect. Several effects can be enabled simultaneously.
+The LCD menu displays the available audio effects and their configurable settings.
+The settings will be different for each effect, but every effect has a bypass setting for disabling the effect.
+Several effects can be enabled simultaneously.
 
-The button group on the bottom left side of the display is the navigation buttons. The group consist of four buttons. These buttons can be used to navigate through the effects and their respective settings.
-
-The button group on the bottom right side of the display handles incrementing and decrementing setting values. The group consists of two buttons. When a setting is selected with the navigation buttons, using these buttons will change the value displayed next to each setting.
+The button group to the left is for navigation, and the buttons to the right increment and decrement the selected setting value.
+When a setting value is changed the MCU with send a corresponding control signal to the FPGA and the display will be updated.
