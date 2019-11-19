@@ -25,6 +25,7 @@ This effect mixes the direct signal with a delayed copy of itself. The mixed sig
 This effect modulates the amplitude of the signal based on an LFO, producing an oscillating volume envelope. 
 - **Rate**: the frequency of the LFO.
 - **Depth**: the factor by which the amplitude is modulated.
+- **Wave Form**: the wave that is used 0: sine, 1: square, 2: triangle, 3: sawtooth
 
 ### Bit crusher
 This effect reduced either the effective sample rate, the effective bit depth, or both, of the signal.  
