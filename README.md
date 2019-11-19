@@ -1,7 +1,7 @@
 # Effect-Box
 
 ## Introduction
-Effect-Box is an audio effect device that takes an audio input, modifies it by applying effects and plays the modified audio on a DAC.
+The Effect-Box is an audio effect device that takes an audio input, modifies it by applying effects and plays the modified audio on a DAC.
 The audio input and output is provided by two 3.5 mm jacks.
 To select the desired audio effects and configure these the PCB is equipped with an LCD screen and buttons.
 
@@ -9,20 +9,24 @@ To select the desired audio effects and configure these the PCB is equipped with
 TODO image, description of physical connections (power, audio, ..)
 
 ## Effects
-Several effects can be enabled simultaneously.
-They are chained after each other, meaning the original audio signal is the input to the first effect, and each effects output is the input to the next effect in the chain.
-The order of effects is fixed and not configurable.
-
-### Bit crusher
-TODO
-
-### Tremolo
-TODO
+There are three effects which can be enabled simultaneously. They are chained after each other, meaning the original audio signal is the input to the first effect, and each effect's output is the input to the next effect in the chain. The signal chain is ADC -> delay -> tremolo -> bit crusher -> DAC. Each effect can be bypassed or enabled, but the order is fixed and not configurable.
 
 ### Delay
-TODO
+This effect mixes the direct signal with a delayed copy of itself. The mixed signal is fed back into the delay line.
+- **Delay**: the delay time in milliseconds.
+- **Feedback**: the percentage of feedback of the delay back into itself.
+- **Mix**: the ratio of the delayed to the original signal that is output by the module.
 
-TODO briefly describe the audio properties (not implementation) of each effect
+### Tremolo
+This effect modulates the amplitude of the signal based on an LFO, producing an oscillating volume envelope. 
+- **Rate**: the frequency of the LFO.
+- **Depth**: the factor by which the amplitude is modulated.
+
+### Bit crusher
+This effect reduced either the effective sample rate, the effective bit depth, or both, of the signal.  
+- **Bits**: the amount of bit depth reduction
+- **Rate**: the number of samples that are dropped before a sample is passed through.
+
 
 ## How it works
 The audio effects are implemented in Chisel and run on a Xilinx Artix 7 FPGA.
