@@ -55,6 +55,6 @@ To connect a sound source to the Effect Box, you probably need to use a 6.35 to 
 
 ## Flashing
 ### FPGA 
-Connect to the FPGA with a Xilinx Artix-7 something something connector with the "tab" on the connector pointing down with respect to the PCB. To be able to build and upload the [hardware description code](https://github.com/DMPRO-Gruppe-B/Effect-Box-FPGA), follow the instruction of [this FPGA wiki](https://github.com/DMPRO-Gruppe-B/Effect-Box-FPGA/wiki/Flashing).
+Connect to the FPGA with a Xilinx platform cable connector with the "tab" on the connector pointing down with respect to the PCB. To be able to build and upload the [hardware description code](https://github.com/DMPRO-Gruppe-B/Effect-Box-FPGA), follow the instructions of [this FPGA wiki](https://github.com/DMPRO-Gruppe-B/Effect-Box-FPGA/wiki/Flashing).
 ### MCU
 Connect to the MCU with an ARM 20-pin connector with the "tab" on the connector pointing downwards with respect to the PCB.
