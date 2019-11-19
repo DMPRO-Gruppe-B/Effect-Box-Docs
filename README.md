@@ -6,7 +6,11 @@ The audio input and output is provided by two 3.5 mm jacks.
 To select the desired audio effects and configure these the PCB is equipped with an LCD screen and buttons.
 
 ## Quickstart guide
-TODO image, description of physical connections (power, audio, ..)
+TODO image with physical connections
+
+- Connect an audio source to the audio input jack. You probably need an adapter (see [Audio connection](#Audio connection).
+- Connect the audio output jack to a line level input, such as a sound card or an active speaker.
+- ... TODO connect power cable, power on, use xilinx connector whatever it's called, 
 
 ## Effects
 There are three effects which can be enabled simultaneously. They are chained after each other, meaning the original audio signal is the input to the first effect, and each effect's output is the input to the next effect in the chain. The signal chain is ADC -> delay -> tremolo -> bit crusher -> DAC. Each effect can be bypassed or enabled, but the order is fixed and not configurable.
